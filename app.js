@@ -41,3 +41,12 @@ if (answer4 === 'Y' || answer4 === 'YES') {
   alert('Incorrect. You\'d be surprised.');
   console.log('The user answered question 4 incorrectly');
 }
+
+var answer5 = prompt('Is George fluent in English?');
+if (answer5 === 'Y' || answer5 === 'YES') {
+  alert('Yes he speaks English like crazy!');
+  console.log('The user answered question 5 correctly');
+} else {
+  alert('Incorrect. Clearly you haven\'t been listening to his sweet, soulful baritone.');
+  console.log('The user answered question 5 incorrectly');
+}
