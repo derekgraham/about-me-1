@@ -1,6 +1,6 @@
 var userName = prompt('Hi! Let\'s get to know each other! First, please tell me your name...');
 console.log('The user\'s name is ' + userName);
-alert('Welcome ' + userName + '! Please answer the following questions with a "YES" or a "NO".');
+alert('Welcome ' + userName + '! Please answer the following questions with a "YES" or a "NO" response.');
 
 var answer1 = prompt('Was George born in Seattle?').toUpperCase();
 
