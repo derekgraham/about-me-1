@@ -1,5 +1,6 @@
-alert('Hi! Let\'s play a guessing game about me! Please answer each\
-question with a "Y" or an "N"');
+var userName = prompt('Hi! Let\'s get to know each other! First, please tell me your name...');
+console.log('The user\'s name is ' + userName);
+alert('Welcome ' + userName + '! Please answer the following questions with a "YES" or a "NO".');
 
 var answer1 = prompt('Was George born in Seattle?').toUpperCase();
 
