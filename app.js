@@ -33,7 +33,6 @@ if (answer3 === 'Y' || answer3 === 'YES') {
 }
 
 var answer4 = prompt('Does the fate of the world hang in the balance?').toUpperCase();
-
 if (answer4 === 'Y' || answer4 === 'YES') {
   alert('Yes! The very fabric of space and time will be rent asunder or preserved for eternity based on the outcome of this exercise.');
   console.log('The user answered question 4 correctly');
@@ -49,4 +48,23 @@ if (answer5 === 'Y' || answer5 === 'YES') {
 } else {
   alert('Incorrect. Clearly you haven\'t been listening to his sweet, soulful baritone.');
   console.log('The user answered question 5 incorrectly');
+}
+
+var guesses = 0;
+
+while(guesses < 4) {
+  var answer6 = prompt('How long do you think George and his wife, Kelly, have lived together (including years unmarried) Hint: It\'s less than 20? (also, you only get 4 guesses!)');
+  guesses += 1;
+  if(isNaN(answer6)) {
+    alert('Real smooth, wasting your guesses like that!');
+  } else if(answer6 < 8) {
+    console.log('Too low! Guess again!');
+    alert('Too low! Guess again!');
+  } else if(answer6 > 8) {
+    console.log('Too high! Guess again!');
+    alert('Too high! Guess again!');
+  } else {
+    console.log('The user guessed correctly!');
+    alert('Correct! Amazing they\'ve been living together for such a long time!');
+  }
 }
