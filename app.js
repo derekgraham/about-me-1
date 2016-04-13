@@ -53,7 +53,7 @@ if (answer5 === 'Y' || answer5 === 'YES') {
 var guesses = 0;
 
 while(guesses < 4) {
-  var answer6 = prompt('How long do you think George and his wife, Kelly, have lived together (including years unmarried) Hint: It\'s less than 20? (also, you only get 4 guesses!)');
+  var answer6 = prompt('How long do you think George and his wife, Kelly, have lived together (including years unmarried)? Hint: It\'s less than 20. (also, you only get 4 guesses!)');
   guesses += 1;
   if(isNaN(answer6)) {
     alert('Real smooth, wasting your guesses like that!');
@@ -66,5 +66,25 @@ while(guesses < 4) {
   } else {
     console.log('The user guessed correctly!');
     alert('Correct! Amazing they\'ve been living together for such a long time!');
+    guesses = 4;
+  }
+}
+
+var correctCities = ['SEATTLE', 'SHORELINE', 'PORTLAND', 'EUGENE', 'SPRINGFIELD'];
+var attempts = 0;
+
+while(attempts < 6) {
+  var answer7 = prompt('Can you guess the names of any city I\'ve lived in? (Hint: they are all West coast cities - AND you only have 6 guesses!)').toUpperCase();
+  attempts += 1;
+  for(var i = 0; i < correctCities.length; i++) {
+    if(answer7 === correctCities[i]) {
+      console.log('The user answered correctly!');
+      alert('Incredible, you must know George pretty well!');
+      attempts = 6;
+      i = correctCities.length;
+    } else {
+      console.log('The user guessed incorrectly.');
+      alert('Nope. He never lived there! Keep guessing!');
+    }
   }
 }
