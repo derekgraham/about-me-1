@@ -45,24 +45,25 @@ function question6(){
   'use strict';
   while(guesses < 4) {
     var answer6 = prompt('How long do you think George and his wife, Kelly, have lived together (including years unmarried)? Hint: It\'s less than 20. (also, you only get 4 guesses!)');
+    answer6 = parseInt(answer6);
     guesses += 1;
     if(isNaN(answer6)) {
       alert('Real smooth, wasting your guesses like that!');
+    } else if (answer6 === 8){
+      console.log('The user guessed correctly!');
+      alert('Correct! Amazing they\'ve been living together for such a long time!');
+      rightAnswers++;
+      break;
     } else if(answer6 < 8) {
       console.log('Wrong answer, too low');
       alert('Too low! Guess again!');
     } else if(answer6 > 8) {
       console.log('Wrong answer, too high');
       alert('Too high! Guess again!');
-    } else {
-      console.log('The user guessed correctly!');
-      alert('Correct! Amazing they\'ve been living together for such a long time!');
-      rightAnswers++;
-      break;
+    } else if (guesses === 3 ) {
+      alert('You ran out of guesses, sorry!');
+      console.log('User ran out of guesses');
     }
-  }
-  if (guesses === 4) {
-    console.log('User ran out of guesses');
   }
 }
 
@@ -74,8 +75,6 @@ function question7(){
   while(attempts < 6) {
     var answer7 = prompt('Can you guess the names of any city I\'ve lived in? (Hint: they are all West coast cities - AND you only have 6 guesses!)').toUpperCase();
     for(var i = 0; i < correctCities.length; i++) {
-      console.log(attempts + ' ' + answer7);
-      console.log(answer7 + ' ' + correctCities[i]);
       if(answer7 === correctCities[i]) {
         foundOne = true;
         attempts = 6;
@@ -116,12 +115,7 @@ function tallyAnswers(){
     alert('6 out of 7 correct answers!');
   }
 }
-askFiveQuestions();
-// question1();
-// question2();
-// question3();
-// question4();
-// question5();
+// askFiveQuestions();
 question6();
 question7();
 tallyAnswers();
