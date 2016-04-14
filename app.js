@@ -42,7 +42,7 @@ function askFiveQuestions(){
 
 var guesses = 0;
 function question6(){
-  'use strict';
+  'use strict'; //added use strict everywhere instread of changing lint parser definitions.
   while(guesses < 4) {
     var answer6 = prompt('How long do you think George and his wife, Kelly, have lived together (including years unmarried)? Hint: It\'s less than 20. (also, you only get 4 guesses!)');
     answer6 = parseInt(answer6);
