@@ -1,0 +1,19 @@
+body {
+  background-color: gray;
+}
+
+.headers {
+  color: #000000;
+}
+
+ol {
+  color: white;
+}
+
+ul {
+  color: white;
+}
+
+p {
+  color: gray;
+}
