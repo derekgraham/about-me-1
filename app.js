@@ -1,77 +1,42 @@
 
 var rightAnswers = 0;
 var totalQuestions = 7;
+var fiveQuestions = ['Was George born in Seattle?',
+'Is George\'s wife named Esmerelda?',
+'Has George been a coding student since highschool?',
+'Does the fate of the world hang in the balance?',
+  'Is George fluent in English?'];
+
+var fiveAnswers = ['YES','NO','NO','YES','YES'];
+
+var correctResponses = ['Yes he was born and raised in Seattle!',
+'Correct. George\'s lovely wife\'s name is Kelly',
+ 'Correct. George has just begun this beautiful journey',
+'Yes! The very fabric of space and time will be rent asunder or preserved for eternity based on the outcome of this exercise.',
+'Yes he speaks English like crazy!'];
+
+var incorrectResponses = ['Incorrect. George WAS born in Seattle',
+ 'No, if you read his BIO you would know her name is Kelly',
+ 'Wrong! He\'s just jumping on the bandwagon NOW',
+ 'Incorrect. You\'d be surprised.',
+'Incorrect. Clearly you haven\'t been listening to his sweet, soulful baritone.'];
 
 var userName = prompt('Hi! Let\'s get to know each other! First, please tell me your name...');
 console.log('The user\'s name is ' + userName);
 alert('Welcome ' + userName + '! Please answer the following questions with a "YES" or a "NO" response.');
 
-function question1(){
+function askFiveQuestions(){
   'use strict';
-  var answer1 = prompt('Was George born in Seattle?').toUpperCase();
-
-  if (answer1 === 'Y' || answer1 === 'YES') {
-    alert('Yes he was born and raised in Seattle!');
-    console.log('The user answered question 1 correctly');
-    rightAnswers++;
-  } else {
-    alert('Incorrect. George WAS born in Seattle');
-    console.log('The user answered question 1 incorrectly');
-  }
-}
-
-function question2(){
-  'use strict';
-  var answer2 = prompt('Is George\'s wife named Esmerelda?').toUpperCase();
-
-  if (answer2 === 'Y' || answer2 === 'YES') {
-    alert('No, if you read his BIO you would know her name is Kelly');
-    console.log('The user answered question 2 incorrectly');
-  } else {
-    alert('Correct. George\'s lovely wife\'s name is Kelly');
-    console.log('The user answered question 2 correctly');
-    rightAnswers++;
-  }
-}
-
-function question3(){
-  'use strict';
-  var answer3 = prompt('Has George been a coding student since highschool?').toUpperCase();
-
-  if (answer3 === 'Y' || answer3 === 'YES') {
-    alert('Wrong! He\'s just jumping on the bandwagon NOW');
-    console.log('The user answered question 3 incorrectly');
-  } else {
-    alert('Correct. George has just begun this beautiful journey');
-    console.log('The user answered question 3 correctly');
-    rightAnswers++;
-  }
-}
-
-function question4(){
-  'use strict';
-  var answer4 = prompt('Does the fate of the world hang in the balance?').toUpperCase();
-
-  if (answer4 === 'Y' || answer4 === 'YES') {
-    alert('Yes! The very fabric of space and time will be rent asunder or preserved for eternity based on the outcome of this exercise.');
-    console.log('The user answered question 4 correctly');
-    rightAnswers++;
-  } else {
-    alert('Incorrect. You\'d be surprised.');
-    console.log('The user answered question 4 incorrectly');
-  }
-}
-function question5(){
-  'use strict';
-  var answer5 = prompt('Is George fluent in English?').toUpperCase();
-
-  if (answer5 === 'Y' || answer5 === 'YES') {
-    alert('Yes he speaks English like crazy!');
-    console.log('The user answered question 5 correctly');
-    rightAnswers++;
-  } else {
-    alert('Incorrect. Clearly you haven\'t been listening to his sweet, soulful baritone.');
-    console.log('The user answered question 5 incorrectly');
+  for (var i = 0; i < 5 ; i++){
+    var answer1 = prompt(fiveQuestions[i]).toUpperCase();
+    if (answer1 === fiveAnswers[i][0] || answer1 === fiveAnswers[i]) {
+      alert(correctResponses[i]);
+      console.log('The user answered question ' + (i + 1) + ' correctly');
+      rightAnswers++;
+    } else {
+      alert(incorrectResponses[i]);
+      console.log('The user answered question ' + (i + 1) + ' incorrectly');
+    }
   }
 }
 
@@ -89,14 +54,15 @@ function question6(){
     } else if(answer6 > 8) {
       console.log('Wrong answer, too high');
       alert('Too high! Guess again!');
-    } else if(guesses === 4) {
-      console.log('User ran out of guesses');
     } else {
       console.log('The user guessed correctly!');
       alert('Correct! Amazing they\'ve been living together for such a long time!');
-      guesses = 4;
       rightAnswers++;
+      break;
     }
+  }
+  if (guesses === 4) {
+    console.log('User ran out of guesses');
   }
 }
 
@@ -118,18 +84,17 @@ function question7(){
       }
     }
     if (foundOne === true){
-      console.log('The user answered correctly!');
+      console.log('The user answered question 6 correctly!');
       alert('Incredible, you must know George pretty well!');
       // i = correctCities.length + 1;
     }
     else {
-      console.log('The user guessed incorrectly.');
+      console.log('The user guessed question 6 incorrectly.');
       alert('Nope. He never lived there! Keep guessing!');
       attempts += 1;
     }
   }
 }
-
 
 function tallyAnswers(){
   'use strict';
@@ -151,12 +116,13 @@ function tallyAnswers(){
     alert('6 out of 7 correct answers!');
   }
 }
+askFiveQuestions();
 // question1();
 // question2();
 // question3();
 // question4();
 // question5();
-// question6();
+question6();
 question7();
 tallyAnswers();
 alert('Thanks for playing ' + userName + '! Hope you learned something!');
